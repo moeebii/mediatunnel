@@ -1,31 +1,98 @@
-body {
-  margin: 0;
-  font-size: 10px;
-  font-family: Arial, Helvetica, sans-serif;
-  box-sizing: border-box;
+.body {
+    margin: 0;
+    font-size: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 1rem;
-  text-align: center;
+.background-text {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 2rem;
+    font-family: "bigmoore", serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    color: #b70000; /* Text color set to white */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+    transition: background-color 0.3s, color 0.3s; /* Added transition property */
 }
 
-h2 {
-  margin-top: 20px;
+.image-container:hover .background-text {
+    background-color: #fff; /* Invert background color on hover to white */
+    color: #b70000; /* Invert text color on hover to red */
+}
+
+@media screen and (min-width: 1200px) {
+    .background-text {
+        font-size: 5rem;
+        margin-left: 5rem;
+        margin-right: 5rem;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+    .background-text {
+        font-size: 3rem;
+        margin-left: 5rem;
+        margin-right: 5rem;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .background-text {
+        font-size: 2rem;
+        margin-left: 5rem;
+        margin-right: 5rem;
+    }
 }
 
 .image-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-width: 70%; /* Adjust the value to your preference */
-  margin: 0 auto; /* Center the container */
+    position: absolute;
+    top: calc((100vh - 30%) / 2);
+    left: calc((100vw - 30%) / 2);
+    width: 30%;
+    max-width: 100%;
+    overflow: hidden;
 }
 
 img {
-  width: 100%;
-  height: auto;
-  max-width: 100%;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
 }
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+body {
+  /* existing styles */
+  color: inherit; /* Add this line to inherit color from parent */
+}
+
+.background-text {
+  /* existing styles */
+  color: #b70000; /* Set the color explicitly for .background-text */
+}
+
+ 
