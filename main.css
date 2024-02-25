@@ -85,14 +85,5 @@ img {
     }
 }
 
-body {
-  /* existing styles */
-  color: inherit; /* Add this line to inherit color from parent */
-}
-
-.background-text {
-  /* existing styles */
-  color: #b70000; /* Set the color explicitly for .background-text */
-}
 
  
